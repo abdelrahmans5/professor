@@ -1,0 +1,45 @@
+<section class="page-hero" dir="rtl">
+    <div class="hero-content">
+        <p class="kicker">الدورات التعليمية</p>
+        <h1>اختار برنامجك وابدأ التطور بخطة واضحة</h1>
+        <p>
+            صفحة الدورات مخصصة لعرض البرامج المتاحة، تفاصيل كل دورة، ومدتها والمستوى المناسب لها
+            عشان تختار بسهولة البرنامج الأنسب لهدفك الدراسي.
+        </p>
+        <a class="hero-btn" routerLink="/schedule">شوف المواعيد المتاحة</a>
+    </div>
+    <img class="hero-image" src="/images/well.png" alt="الدورات التعليمية" />
+</section>
+
+<section class="tracks" dir="rtl">
+    <div class="section-head">
+        <h2>البرامج المتاحة الآن</h2>
+        <p>كل برنامج مصمم لهدف واضح ومخرجات تعلم قابلة للقياس.</p>
+    </div>
+
+    <div class="tracks-grid">
+        @for (track of tracks; track track.title) {
+        <article class="track-card">
+            <img [src]="track.image" [alt]="track.title" />
+            <div class="track-body">
+                <h3>{{ track.title }}</h3>
+                <p class="meta">{{ track.level }} • {{ track.lessons }} • {{ track.duration }}</p>
+                <p class="desc">{{ track.description }}</p>
+                <button class="card-btn">احجز في البرنامج</button>
+            </div>
+        </article>
+        }
+    </div>
+</section>
+
+<section class="enroll" dir="rtl">
+    <h2>إزاي تبدأ؟</h2>
+    <div class="steps">
+        @for (step of steps; track $index) {
+        <div class="step">
+            <span>{{ $index + 1 }}</span>
+            <p>{{ step }}</p>
+        </div>
+        }
+    </div>
+</section>

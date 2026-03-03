@@ -1,0 +1,21 @@
+<div class="auth-page" dir="rtl">
+    <div class="auth-card">
+        <div class="auth-head">
+            <h2>استرجاع كلمة المرور</h2>
+            <p>أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين.</p>
+        </div>
+
+        <form (submit)="onRequest($event)">
+            <label>البريد الإلكتروني المرتبط
+                <input type="email" [(ngModel)]="email" name="email" required />
+            </label>
+
+            <div class="actions">
+                <button class="primary" type="submit">إرسال الرابط</button>
+                <a class="link" routerLink="/auth/login">العودة لتسجيل الدخول</a>
+            </div>
+        </form>
+
+        <div class="message" *ngIf="message">{{ message }}</div>
+    </div>
+</div>

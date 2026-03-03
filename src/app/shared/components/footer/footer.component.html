@@ -1,0 +1,54 @@
+<footer class="site-footer" dir="rtl">
+    <div class="container py-5">
+        <div class="row g-4 pb-4 mt-1">
+            <div class="col-md-6 col-lg-4">
+                <h5 class="mb-3 fw-bold text-white">أكاديمية الأستاذ</h5>
+                <p class="mb-3 text-white-50">منصة تعليمية منظمة لتطوير المستوى خطوة بخطوة مع متابعة حقيقية.</p>
+                <ul class="list-unstyled mb-0 small text-white-50">
+                    <li class="mb-2"><i class="fa-solid fa-location-dot ms-2"></i>القاهرة، مصر</li>
+                    <li class="mb-2"><i class="fa-solid fa-phone ms-2"></i>+20 100 000 0000</li>
+                    <li><i class="fa-solid fa-envelope ms-2"></i>teacher@lessons.com</li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <h6 class="mb-3 fw-semibold text-white">روابط سريعة</h6>
+                <ul class="list-unstyled m-0">
+                    @for (item of quickLinks; track item.label) {
+                    <li class="mb-2">
+                        <a class="footer-link" [routerLink]="item.link">{{ item.label }}</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <h6 class="mb-3 fw-semibold text-white">معلومات مهمة</h6>
+                <ul class="list-unstyled m-0">
+                    @for (item of projectLinks; track item.label) {
+                    <li class="mb-2">
+                        <a class="footer-link" [routerLink]="item.link">{{ item.label }}</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-2">
+                <h6 class="mb-3 fw-semibold text-white">تابعنا</h6>
+                <div class="d-flex gap-2 flex-wrap">
+                    @for (social of socialLinks; track social.label) {
+                    <a class="social-circle" [href]="social.href" target="_blank" rel="noopener noreferrer"
+                        [attr.aria-label]="social.label">
+                        <i [class]="social.icon"></i>
+                    </a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="m-0">© {{ currentYear }} أكاديمية الأستاذ. كل الحقوق محفوظة.</p>
+            <p class="m-0">تصميم وتطوير واجهة Angular</p>
+        </div>
+    </div>
+</footer>

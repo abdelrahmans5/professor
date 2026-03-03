@@ -1,0 +1,144 @@
+<section class="home-page" dir="rtl">
+    <section class="hero">
+        <div class="hero-container vh-">
+            <div class="hero-content">
+                <p class="hero-subtitle">{{ teacher.title }}</p>
+                <h1 class="site-title">مع {{ teacher.name }}... الإنجليزي حاجة تانية!</h1>
+                <p class="lead">
+                    مش هقولك إن الإنجليزي سهل، بس مع طريقة الشرح خطوة بخطوة هتحس إنه أبسط بكتير.
+                    هتفهم بسرعة، وتتدرّب صح، وتوصل لنتيجة قوية.
+                </p>
+
+                <div class="hero-cta">
+                    <button class="primary" type="button">انضم لينا</button>
+                </div>
+
+                <div class="hero-highlights">
+                    <div class="highlight">شرح بسيط ومباشر</div>
+                    <div class="highlight">متابعة + اختبارات دورية</div>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <span class="molecule m1"></span>
+                <span class="molecule m2"></span>
+                <span class="molecule m3"></span>
+                <div class="visual-shape"></div>
+                <div class="teacher-cutout">
+                    <span class="teacher-tag">TEACHER</span>
+                    <img class="teacher-photo" [src]="teacherImages.hero" [alt]="teacher.name" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" aria-label="إحصائيات الأكاديمية">
+        <div class="stats-hero">
+            <p class="stats-kicker">نتائجنا بالأرقام</p>
+            <h2>أرقام تتكلم عنّا</h2>
+            <p>كل رقم هنا بيعكس شغل حقيقي ومتابعة مستمرة مع الطلاب.</p>
+        </div>
+        <div class="stats-wrapper">
+            <div class="stat" *ngFor="let s of displayedStats; let i = index" [class.stat-alt]="i % 2 === 1">
+                <div class="stat-top">
+                    <span class="stat-index">0{{ i + 1 }}</span>
+                    <span class="stat-dot"></span>
+                </div>
+                <div class="stat-value">{{ s.value | number }}</div>
+                <div class="stat-label">{{ s.label }}</div>
+                <p class="stat-hint">{{ s.hint }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-showcase" aria-label="من نحن">
+        <div class="section-head center">
+            <h2>تفكر فايتك إيه يا بطل؟</h2>
+            <p>{{ about.text }}</p>
+        </div>
+
+        <div class="about-stage">
+            <article class="note-card card-a">
+                <h3>{{ aboutCards[0].title }}</h3>
+                <p>{{ aboutCards[0].text }}</p>
+            </article>
+
+            <article class="note-card note-primary card-b">
+                <h3>{{ aboutCards[1].title }}</h3>
+                <p>{{ aboutCards[1].text }}</p>
+            </article>
+
+            <div class="about-center" aria-hidden="true">
+                <img [src]="teacherImages.about" [alt]="teacher.name" />
+                <div class="about-center-badge">ACADEMY</div>
+            </div>
+
+            <article class="note-card note-primary card-c">
+                <h3>{{ aboutCards[2].title }}</h3>
+                <p>{{ aboutCards[2].text }}</p>
+            </article>
+
+            <article class="note-card card-d">
+                <h3>{{ aboutCards[3].title }}</h3>
+                <p>{{ aboutCards[3].text }}</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="courses">
+        <div class="courses-layout">
+            <div class="courses-slider-shell">
+                <div class="courses-slider-track" #coursesTrack>
+                    <article class="lecture-card" *ngFor="let c of courses; let i = index">
+                        <div class="lecture-image">
+                            <img [src]="courseImages[i % courseImages.length]" [alt]="c.title" />
+                            <span>{{ c.grade }}</span>
+                        </div>
+                        <div class="lecture-body">
+                            <h4 class="lecture-title">{{ c.title }}</h4>
+                            <p class="lecture-price">
+                                <span class="current">{{ c.price }} جنيه</span>
+                                <span class="old" *ngIf="c.oldPrice">{{ c.oldPrice }} جنيه</span>
+                            </p>
+                            <p class="lecture-desc">{{ c.description }}</p>
+                            <p class="lecture-date">{{ c.startDate }}</p>
+
+                            <div class="lecture-actions">
+                                <button class="secondary" type="button">الدخول للكورس</button>
+                                <button class="primary" type="button">الإشتراك في الكورس</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="courses-controls" aria-label="التحكم في السلايدر">
+                    <button class="control-btn" type="button" (click)="moveCoursesSlider('prev')">&#8594;</button>
+                    <button class="control-btn" type="button" (click)="moveCoursesSlider('next')">&#8592;</button>
+                </div>
+            </div>
+
+            <div class="courses-content">
+                <h2>محاضراتنا لكل الصفوف الدراسية</h2>
+                <p>
+                    لو بتدور على الطريقة الأسهل والأضمن عشان تطور مستواك،
+                    فأنت في المكان الصح! محاضرات منظمة، متابعة مستمرة، وخطة واضحة للنتيجة.
+                </p>
+                <button class="primary show-all" type="button">عرض الكل</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-teacher" aria-label="دعوة للانضمام">
+        <div class="join-teacher-inner">
+            <div class="join-teacher-content">
+                <img class="join-teacher-photo" [src]="teacherImages.join" [alt]="teacher.name" />
+                <div class="join-copy">
+                    <p class="join-kicker">{{ teacher.name }}</p>
+                    <h2>مستني ايه؟ انضم معانا</h2>
+                    <p>ابدأ رحلتك التعليمية من دلوقتي، وخلي مستواك يتغيّر خطوة بخطوة مع متابعة حقيقية.</p>
+                    <button class="primary" type="button">احجز الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

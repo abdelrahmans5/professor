@@ -1,0 +1,34 @@
+<div class="auth-page register-page" dir="rtl">
+    <img class="auth-bg-image" src="/images/welcome.png" alt="" aria-hidden="true" />
+    <div class="auth-card">
+        <div class="auth-head">
+            <h2>إنشاء حساب جديد</h2>
+            <p>ابدأ رحلتك التعليمية معنا بخطوات بسيطة.</p>
+        </div>
+
+        <form (submit)="onSubmit($event)">
+            <label>الاسم الكامل
+                <input type="text" [(ngModel)]="name" name="name" required />
+            </label>
+
+            <label>البريد الإلكتروني
+                <input type="email" [(ngModel)]="email" name="email" required />
+            </label>
+
+            <label>كلمة المرور
+                <input type="password" [(ngModel)]="password" name="password" required />
+            </label>
+
+            <div class="actions">
+                <button class="primary" type="submit">إنشاء الحساب</button>
+            </div>
+        </form>
+
+        <div class="alt">
+            <span>لديك حساب بالفعل؟</span>
+            <a class="link" routerLink="/auth/login">تسجيل دخول</a>
+        </div>
+
+        <div class="message" *ngIf="message">{{ message }}</div>
+    </div>
+</div>

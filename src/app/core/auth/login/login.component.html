@@ -1,0 +1,31 @@
+<div class="auth-page login-page" dir="rtl">
+    <img class="auth-bg-image" src="/images/welcome.png" alt="" aria-hidden="true" />
+    <div class="auth-card">
+        <div class="auth-head">
+            <h2>تسجيل الدخول</h2>
+            <p>أهلاً بعودتك 👋 أدخل بياناتك للوصول إلى حسابك.</p>
+        </div>
+
+        <form (submit)="onSubmit($event)">
+            <label>البريد الإلكتروني
+                <input type="email" [(ngModel)]="email" name="email" required />
+            </label>
+
+            <label>كلمة المرور
+                <input type="password" [(ngModel)]="password" name="password" required />
+            </label>
+
+            <div class="actions">
+                <button class="primary" type="submit">دخول</button>
+                <a class="link" routerLink="/auth/forgot-password">نسيت كلمة المرور؟</a>
+            </div>
+        </form>
+
+        <div class="alt">
+            <span>ليس لديك حساب؟</span>
+            <a class="link" routerLink="/auth/register">سجل الآن</a>
+        </div>
+
+        <div class="message" *ngIf="message">{{ message }}</div>
+    </div>
+</div>

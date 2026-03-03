@@ -1,0 +1,37 @@
+<section class="schedule-hero" dir="rtl">
+    <div>
+        <p class="kicker">مواعيد الحصص</p>
+        <h1>تابع جدول المحاضرات الأسبوعي بسهولة</h1>
+        <p>
+            الصفحة دي مخصصة لعرض مواعيد الحصص المباشرة لكل مستوى، مع ملاحظات الحجز
+            والتنبيهات المهمة قبل بداية كل محاضرة.
+        </p>
+        <a class="hero-link" routerLink="/courses">ارجع للدورات</a>
+    </div>
+    <img src="/images/nice.png" alt="جدول الحصص" />
+</section>
+
+<section class="weekly" dir="rtl">
+    <h2>الجدول الأسبوعي</h2>
+    <div class="weekly-grid">
+        @for (day of weekPlan; track day.day) {
+        <article class="day-card">
+            <h3>{{ day.day }}</h3>
+            <ul>
+                @for (session of day.sessions; track session) {
+                <li>{{ session }}</li>
+                }
+            </ul>
+        </article>
+        }
+    </div>
+</section>
+
+<section class="notes" dir="rtl">
+    <h2>ملاحظات مهمة</h2>
+    <div class="notes-list">
+        @for (note of notes; track note) {
+        <p>{{ note }}</p>
+        }
+    </div>
+</section>

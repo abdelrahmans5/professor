@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom shadow-sm" dir="rtl">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 text-dark fw-bold" routerLink="/home">
+            <span class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span>{{ projectName }}</span>
+        </a>
+
+        <div class="navbar-content d-flex flex-column flex-lg-row align-items-center gap-3 w-100">
+            <ul
+                class="navbar-nav d-flex flex-row flex-wrap align-items-center justify-content-center gap-1 mb-0 mt-2 mt-lg-0 mx-lg-auto">
+                @for (item of navItems; track item.label) {
+                <li class="nav-item">
+                    <a class="nav-link px-lg-3" [routerLink]="item.link" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        {{ item.label }}
+                    </a>
+                </li>
+                }
+            </ul>
+
+            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2">
+                <span class="small text-secondary d-flex align-items-center gap-1">
+                    <i class="fa-solid fa-user-check text-success"></i>
+                    {{ teacherName }}
+                </span>
+                <a class="small text-decoration-none text-primary d-flex align-items-center gap-1"
+                    href="tel:+2{{ phoneNumber }}">
+                    <i class="fa-solid fa-phone"></i>
+                    {{ phoneNumber }}
+                </a>
+                <a class="btn btn-outline-primary btn-sm px-3" routerLink="/auth/login">تسجيل الدخول</a>
+                <a class="btn btn-primary btn-sm px-3 fw-semibold" routerLink="/home">احجز درس</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,127 @@
+:host {
+    display: block;
+    background: #f5f8ff;
+}
+
+.schedule-hero {
+    max-width: 1120px;
+    margin: 1.4rem auto;
+    padding: 1.2rem;
+    border-radius: 20px;
+    background: linear-gradient(110deg, #0f4fb3, #2a77e8);
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 14px 30px rgba(15, 79, 179, .25);
+}
+
+.kicker {
+    margin: 0;
+    font-weight: 700;
+    opacity: .9;
+}
+
+.schedule-hero h1 {
+    margin: .35rem 0 .6rem;
+    font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+}
+
+.schedule-hero p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.schedule-hero img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.hero-link {
+    margin-top: .95rem;
+    display: inline-block;
+    border-radius: 10px;
+    padding: .5rem .95rem;
+    text-decoration: none;
+    background: #f3d21b;
+    color: #102442;
+    font-weight: 700;
+}
+
+.weekly,
+.notes {
+    max-width: 1120px;
+    margin: 1.25rem auto;
+    padding: 0 1rem;
+}
+
+.weekly h2,
+.notes h2 {
+    margin: 0;
+    color: #102442;
+}
+
+.weekly-grid {
+    margin-top: .95rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .9rem;
+}
+
+.day-card {
+    background: #fff;
+    border: 1px solid #dbe6f8;
+    border-radius: 15px;
+    padding: .9rem;
+    box-shadow: 0 8px 20px rgba(17, 44, 86, .08);
+}
+
+.day-card h3 {
+    margin: 0;
+    color: #0f4fb3;
+}
+
+.day-card ul {
+    margin: .65rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .45rem;
+}
+
+.day-card li {
+    background: #f1f6ff;
+    border: 1px solid #d5e4fb;
+    border-radius: 10px;
+    padding: .45rem .55rem;
+    color: #223a5f;
+}
+
+.notes-list {
+    margin-top: .85rem;
+    display: grid;
+    gap: .55rem;
+}
+
+.notes-list p {
+    margin: 0;
+    background: #fff;
+    border: 1px solid #dbe6f8;
+    border-right: 4px solid #1f6fe5;
+    border-radius: 12px;
+    padding: .7rem .8rem;
+    color: #314869;
+    line-height: 1.75;
+}
+
+@media (max-width: 920px) {
+    .schedule-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .weekly-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,36 @@
+<section class="about-hero" dir="rtl">
+    <div class="hero-text">
+        <p class="kicker">عن المدرس</p>
+        <h1>رحلة تعليمية هدفها تطوير الطالب خطوة بخطوة</h1>
+        <p>
+            الصفحة دي بتوضح خبرة المدرس، أسلوب التدريس، والقيم اللي بنشتغل بيها
+            علشان الطالب وولي الأمر يكونوا عارفين بوضوح طبيعة الرحلة التعليمية.
+        </p>
+        <a class="hero-btn" routerLink="/courses">استعرض الدورات</a>
+    </div>
+    <img class="hero-image" src="/images/think.png" alt="الأستاذ" />
+</section>
+
+<section class="achievements" dir="rtl">
+    <h2>نبذة سريعة</h2>
+    <div class="achievements-list">
+        @for (item of achievements; track item) {
+        <div class="achievement-item">
+            <span>✓</span>
+            <p>{{ item }}</p>
+        </div>
+        }
+    </div>
+</section>
+
+<section class="values" dir="rtl">
+    <h2>منهجنا في التدريس</h2>
+    <div class="values-grid">
+        @for (value of values; track value.title) {
+        <article class="value-card">
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+        </article>
+        }
+    </div>
+</section>
